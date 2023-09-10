@@ -1,11 +1,11 @@
 import React from 'react'
 import "./weatherAppStyle.css";
-import clear_icon from '../Assets/clear.png';
-import cloud_icon from '../Assets/cloud.png';
-import drizzle_icon from '../Assets/drizzle.png';
+// import clear_icon from '../Assets/clear.png';
+// import cloud_icon from '../Assets/cloud.png';
+// import drizzle_icon from '../Assets/drizzle.png';
 import humidity_icon from '../Assets/humidity.png';
-import rain_icon from '../Assets/rain.png';
-import snow_icon from '../Assets/snow.png';
+// import rain_icon from '../Assets/rain.png';
+// import snow_icon from '../Assets/snow.png';
 import wind_icon from '../Assets/wind.png';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -19,7 +19,7 @@ export const WeatherApp = () => {
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search || defaultValue}&appid=40ed58a2765c4a602efac457943bedcc&units=metric`);
         const data = await res.json();
         setWeather(data)
-        console.log(data)
+        // console.log(data)
         // const { feels_like, humidity, pressure, temp} = main;
         // console.log(name, feels_like, humidity, pressure, temp);
     }
