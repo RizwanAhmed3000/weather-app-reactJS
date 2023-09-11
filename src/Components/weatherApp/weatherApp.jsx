@@ -16,7 +16,7 @@ export const WeatherApp = () => {
     const [search, setSearch] = useState('');
 
     async function searchWeather(defaultValue) {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search || defaultValue}&appid=40ed58a2765c4a602efac457943bedcc&units=metric`);
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search || defaultValue }&appid=40ed58a2765c4a602efac457943bedcc&units=metric`);
         const data = await res.json();
         setWeather(data)
         // console.log(data)
@@ -25,7 +25,7 @@ export const WeatherApp = () => {
     }
 
     useEffect(()=>{
-        searchWeather("Karachi")
+        searchWeather("karachi")
     }, []);
 
     function inputChangeHandler(val) {
@@ -33,16 +33,20 @@ export const WeatherApp = () => {
     }
 
     return (
-        <div className='container'>
+        <>
+            {weather !== '' ? (
+                <div className='container'>
             <div className='searchBar'>
                 <input type={"text"} className='searchInput' placeholder="Search" value={search} onChange={inputChangeHandler} />
                 <button className='searchBtn' onClick={searchWeather}>Search</button>
             </div>
-            <CountryName name = {weather.name}/>
-            <Temperature tempToday={weather.main.temp} />
-            <FeelsLike weatherToday={weather.weather[0].main} feelsLike={weather.main.feels_like}/>
-            <ForecastDeatails windSpeed={weather.wind.speed} humidityToday={weather.main.humidity} visibilityToday={weather.visibility} pressureToday= {weather.main.pressure}/>
+            <CountryName name={weather?.name ? weather.name : "No data"}/>
+            <Temperature tempToday={weather?.main?.temp ? weather.main.temp : 0} />
+            <FeelsLike weatherToday={weather?.weather[0]?.main ? weather?.weather[0]?.main : 0} feelsLike={weather.main.feels_like ? weather.main.feels_like : 0}/>
+            <ForecastDeatails windSpeed={weather.wind.speed ? weather.wind.speed : 0} humidityToday={weather.main.humidity ? weather.main.humidity : 0} visibilityToday={weather.visibility ? weather.visibility : 0} pressureToday={weather.main.pressure ? weather.main.pressure : 0}/>
         </div>
+        ) : (<h1>loading</h1>)}
+        </>
     )
 }
 
