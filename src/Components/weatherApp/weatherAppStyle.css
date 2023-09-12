@@ -7,10 +7,24 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-    height: 100%;
-    background: linear-gradient(to top, #000046, #1cb5e0);
+    height: 100vh;
+    /* padding: 5px; */
+    background: #b5b5ff
+}
+
+.container {
+    /* margin: 5px; */
+    padding: 15px;
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    min-width: 420px;
+    max-width: 500px;
+    /* background: linear-gradient(to top, #000046, #1cb5e0); */
 }
 
 .searchBar {
@@ -97,10 +111,10 @@ button:active {
 
 .detailContainer {
     width: 100%;
-    background: rgba(235, 235, 235, 0.23);
+    background: rgba(235, 235, 235, 0.1);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(19px);
+    backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(19px);
     border: 1px solid rgba(235, 235, 235, 0.3);
     padding: 10px 13px;
@@ -118,9 +132,12 @@ button:active {
 .detailBox {
     width: 90%;
     height: 100%;
-    padding: 30px 20px ;
+    padding: 30px 20px;
     border-radius: 10px;
     background: #2446a6;
-    box-shadow: 3px 3px 7px 0px #000046,
-        -3px -3px 7px 0px #4162bf;
+    box-shadow: 3px 3px 7px 0px #000046;
+}
+
+.invertColor{
+    filter: invert(100%);
 }
