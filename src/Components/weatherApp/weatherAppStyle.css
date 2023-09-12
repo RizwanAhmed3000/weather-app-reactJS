@@ -13,7 +13,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    /* padding: 5px; */
+    /* padding: 15px 0px; */
     background: #b5b5ff
 }
 
@@ -22,8 +22,8 @@
     padding: 15px;
     /* border: 1px solid black; */
     border-radius: 15px;
-    min-width: 420px;
-    max-width: 500px;
+    width: 420px;
+    /* max-width: 500px; */
     /* background: linear-gradient(to top, #000046, #1cb5e0); */
 }
 
@@ -138,6 +138,24 @@ button:active {
     box-shadow: 3px 3px 7px 0px #000046;
 }
 
-.invertColor{
+.invertColor {
     filter: invert(100%);
+}
+
+/* Tablet */
+@media(min-width: 501px) and (max-width: 768px) {
+    .mainContainer {
+        height: fit-content;
+    }
+}
+
+/* SmartPhone */
+@media(min-width: 320px) and (max-width: 500px) {
+    .mainContainer {
+        height: fit-content;
+    }
+
+    .container {
+        font-size: 12px;
+    }
 }

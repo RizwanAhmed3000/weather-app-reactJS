@@ -38,7 +38,7 @@ export const WeatherApp = () => {
 
     useEffect(() => {
         searchWeather("karachi")
-    }, []);
+    }, [search]);
 
     // useEffect(() => {
     //     setInterval(() => {
@@ -76,7 +76,7 @@ export const WeatherApp = () => {
         <>
             <div className='mainContainer'>
                 {weather !== '' ? (
-                    <div className='container' style={{ backgroundImage: setBackground(), width: "100%",backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+                <div className='container' style={{ backgroundImage: setBackground(),backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                         <div className='searchBar'>
                             <input type={"text"} className='searchInput' placeholder="Search" value={search} onChange={inputChangeHandler} style={{ filter: invertColor() }} />
                             <button className='searchBtn' onClick={searchWeather} style={{ filter: invertColor() }} >Search</button>
