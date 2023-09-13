@@ -18,13 +18,10 @@
 }
 
 .container {
-    /* margin: 5px; */
     padding: 15px;
-    /* border: 1px solid black; */
     border-radius: 15px;
     width: 420px;
-    /* max-width: 500px; */
-    /* background: linear-gradient(to top, #000046, #1cb5e0); */
+    height: 620px;
 }
 
 .searchBar {

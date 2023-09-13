@@ -83,7 +83,7 @@ export const WeatherApp = () => {
                         </div>
                         {
                             weather.cod == "404" ? (
-                                <h1>city not found</h1>
+                                <h1 style={{color:"white" ,filter: invertColor()}}>city not found</h1>
                             ) : (
                                 <>
                                     <CountryName name={weather?.name ? weather.name : "No data"} fontColor={invertColor()} />
