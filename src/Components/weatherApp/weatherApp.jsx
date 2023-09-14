@@ -76,14 +76,18 @@ export const WeatherApp = () => {
         <>
             <div className='mainContainer'>
                 {weather !== '' ? (
-                <div className='container' style={{ backgroundImage: setBackground(),backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+                    <div className='container' style={{ backgroundImage: setBackground(), backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                         <div className='searchBar'>
                             <input type={"text"} className='searchInput' placeholder="Search" value={search} onChange={inputChangeHandler} style={{ filter: invertColor() }} />
                             <button className='searchBtn' onClick={searchWeather} style={{ filter: invertColor() }} >Search</button>
                         </div>
                         {
                             weather.cod == "404" ? (
-                                <h1 style={{color:"white" ,filter: invertColor()}}>city not found</h1>
+                                <div style={{ width: "100%", height: "80%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                    <div class="loader">
+                                        <div class="justify-content-center jimu-primary-loading"></div>
+                                    </div>
+                                </div>
                             ) : (
                                 <>
                                     <CountryName name={weather?.name ? weather.name : "No data"} fontColor={invertColor()} />
@@ -95,7 +99,12 @@ export const WeatherApp = () => {
                         }
 
                     </div>
-                ) : (<h1>loading</h1>)}
+                ) : (
+                    <div class="loader">
+                        <div class="justify-content-center jimu-primary-loading"></div>
+                    </div>
+
+                )}
             </div>
         </>
     )
