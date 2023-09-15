@@ -230,7 +230,7 @@ button:active {
 /* SmartPhone */
 @media(min-width: 320px) and (max-width: 500px) {
     .mainContainer {
-        height: fit-content;
+        height: 100vh;
     }
 
     .container {
