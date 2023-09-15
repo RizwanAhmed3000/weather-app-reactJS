@@ -234,6 +234,7 @@ button:active {
     }
 
     .container {
+        height: 100vh;
         font-size: 12px;
     }
 }
