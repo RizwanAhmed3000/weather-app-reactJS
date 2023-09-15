@@ -231,10 +231,12 @@ button:active {
 @media(min-width: 320px) and (max-width: 500px) {
     .mainContainer {
         height: 100vh;
+        width: 99vw;
     }
 
     .container {
         height: 100vh;
+        width: 99vw;
         font-size: 12px;
     }
 }
